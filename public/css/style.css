@@ -1,0 +1,116 @@
+/* All Weather backgrounds */
+body {
+  background-color: skyblue;
+}
+
+.clear {
+  background: skyblue url(https://www.dropbox.com/s/b1gvmtuk5cp0m36/clear.jpg?raw=1) no-repeat 00;
+  background-size: cover;
+}
+
+.broken {
+  background: skyblue url(https://www.dropbox.com/s/nwtgx2j7sh4hq7d/broken.jpg?raw=1) no-repeat 00;
+  background-size: cover;
+}
+
+.few {
+  background: skyblue     url(https://www.dropbox.com/s/37xvy9iy18kqrde/few.jpg?raw=1) no-repeat 00;
+  background-size: cover;
+}
+
+.scattered {
+  background: skyblue url(https://www.dropbox.com/s/fop29j1u0p6axcv/scattered.jpg?raw=1) no-repeat 00;
+  background-size: cover;
+}
+
+.shower {
+  background: skyblue url(https://www.dropbox.com/s/4u0a112qtdlnj42/shower.jpg?raw=1) no-repeat 00;
+  background-size: cover;
+}
+
+.rain {
+  background: skyblue url(https://www.dropbox.com/s/pgv1hz5c676ibu4/rain.jpg?raw=1) no-repeat 00;
+  background-size: cover;
+}
+
+.thunder {
+  background: skyblue url(https://www.dropbox.com/s/3kyfkr26nnwaupt/thunder.jpg?raw=1) no-repeat 00;
+  background-size: cover;
+}
+
+.snow {
+  background: skyblue url(https://www.dropbox.com/s/pqj1r8ijja19tqu/snow.jpg?raw=1) no-repeat 00;
+  background-size: cover;
+}
+
+.mist {
+  background: skyblue url(https://www.dropbox.com/s/tuw4vfp8aqt3voy/mist.jpg?raw=1) no-repeat 00;
+  background-size: cover;
+}
+
+.weather {
+  background: skyblue url(https://www.dropbox.com/s/8f2l0a1dicpvobk/weather.jpg?raw=1) no-repeat 00;
+  background-size: cover;
+}
+
+container {
+  margin: 50px 0 50px 0;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 20px;
+}
+
+h1 {
+  font-size: 80px;
+  font-family: 'Abril Fatface', serif;
+}
+
+img { 
+  border: 3px solid gray;
+  margin: 50px;
+}
+
+.icon {
+  border: none;
+  height: 70px;
+  margin: 10px;
+}
+
+#location {
+  margin-top: 60px;
+}
+
+.par {
+  font-size: 30px;
+  font-family: 'Abril Fatface', serif;
+}
+
+.info {
+  font-size: 26px;
+  font-family: serif;
+}
+
+#dynamictemp {
+  display: block;
+  height: 100px;
+}
+
+#temp {
+  cursor: pointer;
+  display: block;
+}
+
+#map {
+  display: block;
+}
+
+#map img {
+  height: 250px;
+  width: 250px;
+}
+
+@media (min-width: 750px) {
+  #map img {
+    height: 400px;
+    width: 400px;
+  }
+}
