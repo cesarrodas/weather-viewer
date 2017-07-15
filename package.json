@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/cesarrodas/weather-viewer#readme",
   "dependencies": {
+    "dotenv": "^4.0.0",
     "express": "^4.15.3",
     "serve-favicon": "^2.4.3"
   }

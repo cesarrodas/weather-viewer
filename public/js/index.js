@@ -8,6 +8,7 @@ $(document).ready(function() {
   var cityName;
   var country;
   var init = true;
+  var key = "e93b51d7ce424f1299801843171507";
 
   $.getJSON('https://ipinfo.io', function(location){
     var loc = location.loc.split(",");
@@ -15,69 +16,97 @@ $(document).ready(function() {
     lon = loc[1];
     cityName = location.city;
     country = location.country;
-    //console.log(lat, lon, cityName, country );
 
     img = new Image();
     img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + lat + "," + lon + "&zoom=13&size=400x400&sensor=false";
     $("#map").append(img);
 
-  $.getJSON("https://crossorigin.me/http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&APPID=5ff25fbbab9159e9c404d8172c519d34", function(json){
-      console.log('json', json);
+  $.getJSON("https://api.apixu.com/v1/current.json?key=" + key + "&q=" + cityName, function(data){
+      console.log('json', data);
       icon = new Image();
-       //icon.addClass("icon");
-      icon.src = "https://crossorigin.me/http://openweathermap.org/img/w/" + json.weather[0].icon + ".png";
+      icon.src = "https:" + data.current.condition.icon;
       icon.setAttribute("class", "icon");
 
       $("#location").append("<p class='info'>"+ cityName + ", " + country +"</p>");
 
-      $("#description").append("<p class='info'>" + json.weather[0].main + "</p>");
+      $("#description").append("<p class='info'>" + data.current.condition.text + "</p>");
       $("#description").append(icon);
 
       // This is the temperature
-      celcius = Math.floor(json.main.temp - 273.15);
+      celcius = Math.floor(data.current.temp_c);
       fahrenheit = Math.floor(((celcius * 9)/5) + 32);
       toggle();
 
       // Sets up correct weather
-      var background = json.weather[0].description;
+      var background = data.current.condition.text;
 
       switch(background) {
-        case "clear sky":
-          $("body").removeClass();
-          $("body").addClass("clear");
-          break;
-        case "few clouds":
-          $("body").removeClass();
-          $("body").addClass("few");
-          break;
-        case "scattered clouds":
-          $("body").removeClass();
-          $("body").addClass("scattered");
-          break;
-        case "broken clouds":
+        case "Patchy rain possible":
           $("body").removeClass();
           $("body").addClass("broken");
           break;
-        case "shower rain":
-          case "light rain":
+        case "Sunny":
+        case "Clear":
           $("body").removeClass();
-          $("body").addClass("shower");
+          $("body").addClass("clear");
           break;
-        case "rain":
+        case "Partly cloudy":
+          $("body").removeClass();
+          $("body").addClass("few");
+          break;
+        case "Mist":
+        case "Fog":
+        case "Freezing fog":
+          $("body").removeClass();
+          $("body").addClass("mist");
+          break;
+        case "Moderate rain at times":
+        case "Moderate rain":
+        case "Heavy rain at times":
+        case "Heavy rain":
+        case "Moderate or heavy freezing rain":
           $("body").removeClass();
           $("body").addClass("rain");
           break;
-        case "thunderstorm":
+        case "Overcast":
           $("body").removeClass();
-          $("body").addClass("thunder");
+          $("body").addClass("scattered");
           break;
-        case "snow":
+        case "Patchy freezing drizzle possible":
+        case "Patchy light rain":
+        case "Light rain":
+        case "Light freezing rain":
+        case "Patchy heavy rain":
+        case "Light rain shower":
+        case "Light showers of ice pellets":
+          $("body").removeClass();
+          $("body").addClass("shower");
+          break;
+        case "Patchy snow possible":
+        case "Patchy sleet possible":
+        case "Blowing snow":
+        case "Blizzard":
+        case "Moderate or heavy sleet":
+        case "Patchy light snow":
+        case "Light snow":
+        case "Patchy moderate snow":
+        case "Moderate snow":
+        case "Heavy snow":
+        case "Ice pellets":
+        case "Light sleet showers":
+        case "Moderate or heavy sleet showers":
+        case "Light snow showers":
+        case "Moderate or heavy snow showers":
           $("body").removeClass();
           $("body").addClass("snow");
           break;
-        case "mist":
+        case "Thundery outbreaks possible":
+        case "Patchy light rain with thunder":
+        case "Moderate or heavy rain with thunder":
+        case "Patchy light snow with thunder":
+        case "Moderate or heavy snow with thunder":
           $("body").removeClass();
-          $("body").addClass("mist");
+          $("body").addClass("thunder");
           break;
         default:
           $("body").removeClass();
