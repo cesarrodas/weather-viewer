@@ -41,18 +41,10 @@ $(document).ready(function() {
       var background = data.current.condition.text;
 
       switch(background) {
-        case "Patchy rain possible":
-          $("body").removeClass();
-          $("body").addClass("broken");
-          break;
         case "Sunny":
         case "Clear":
           $("body").removeClass();
           $("body").addClass("clear");
-          break;
-        case "Partly cloudy":
-          $("body").removeClass();
-          $("body").addClass("few");
           break;
         case "Mist":
         case "Fog":
@@ -72,6 +64,8 @@ $(document).ready(function() {
           $("body").removeClass();
           $("body").addClass("scattered");
           break;
+        case "Patchy rain possible":
+        case "Partly cloudy":
         case "Patchy freezing drizzle possible":
         case "Patchy light rain":
         case "Light rain":
