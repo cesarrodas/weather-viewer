@@ -4,58 +4,58 @@ body {
 }
 
 .clear {
-  background: skyblue url(https://www.dropbox.com/s/b1gvmtuk5cp0m36/clear.jpg?raw=1) no-repeat 00;
+  background: skyblue url(../assets/weather/clear.jpg) no-repeat 00;
   background-size: cover;
 }
 
 .broken {
-  background: skyblue url(https://www.dropbox.com/s/nwtgx2j7sh4hq7d/broken.jpg?raw=1) no-repeat 00;
+  background: skyblue url(../assets/weather/broken.jpg) no-repeat 00;
   background-size: cover;
 }
 
 .few {
-  background: skyblue     url(https://www.dropbox.com/s/37xvy9iy18kqrde/few.jpg?raw=1) no-repeat 00;
+  background: skyblue     url(../assets/weather/few.jpg) no-repeat 00;
   background-size: cover;
 }
 
 .scattered {
-  background: skyblue url(https://www.dropbox.com/s/fop29j1u0p6axcv/scattered.jpg?raw=1) no-repeat 00;
+  background: skyblue url(../assets/weather/scattered.jpg) no-repeat 00;
   background-size: cover;
 }
 
 .shower {
-  background: skyblue url(https://www.dropbox.com/s/4u0a112qtdlnj42/shower.jpg?raw=1) no-repeat 00;
+  background: skyblue url(../assets/weather/shower.jpg) no-repeat 00;
   background-size: cover;
 }
 
 .rain {
-  background: skyblue url(https://www.dropbox.com/s/pgv1hz5c676ibu4/rain.jpg?raw=1) no-repeat 00;
+  background: skyblue url(../assets/weather/rain.jpg) no-repeat 00;
   background-size: cover;
 }
 
 .thunder {
-  background: skyblue url(https://www.dropbox.com/s/3kyfkr26nnwaupt/thunder.jpg?raw=1) no-repeat 00;
+  background: skyblue url(../assets/weather/thunder.jpg) no-repeat 00;
   background-size: cover;
 }
 
 .snow {
-  background: skyblue url(https://www.dropbox.com/s/pqj1r8ijja19tqu/snow.jpg?raw=1) no-repeat 00;
+  background: skyblue url(../assets/weather/snow.jpg) no-repeat 00;
   background-size: cover;
 }
 
 .mist {
-  background: skyblue url(https://www.dropbox.com/s/tuw4vfp8aqt3voy/mist.jpg?raw=1) no-repeat 00;
+  background: skyblue url(../assets/weather/mist.jpg) no-repeat 00;
   background-size: cover;
 }
 
 .weather {
-  background: skyblue url(https://www.dropbox.com/s/8f2l0a1dicpvobk/weather.jpg?raw=1) no-repeat 00;
+  background: skyblue url(../assets/weather/weather.jpg) no-repeat 00;
   background-size: cover;
 }
 
 container {
   margin: 50px 0 50px 0;
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.3);
   border-radius: 20px;
 }
 
@@ -64,8 +64,9 @@ h1 {
   font-family: 'Abril Fatface', serif;
 }
 
-img { 
-  border: 3px solid gray;
+img {
+  border: 4px solid #323232;
+  border-radius: 4px;
   margin: 50px;
 }
 
