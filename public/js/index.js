@@ -7,8 +7,8 @@ $(document).ready(function() {
   var icon;
   var cityName;
   var country;
+  var weather;
   var init = true;
-  var key = "e93b51d7ce424f1299801843171507";
 
   $.getJSON('https://ipinfo.io', function(location){
     var loc = location.loc.split(",");
@@ -18,10 +18,11 @@ $(document).ready(function() {
     country = location.country;
 
     img = new Image();
-    img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + lat + "," + lon + "&zoom=13&size=400x400&sensor=false";
+    img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + lat + "," + lon + "&zoom=13&size=400x400&sensor=false&key=AIzaSyCwI4u11z0tUf47aq9JDRZxOa3ukhh5bYE";
     $("#map").append(img);
-
-  $.getJSON("https://api.apixu.com/v1/current.json?key=" + key + "&q=" + cityName, function(data){
+    weather = String(window.location.href) + "weather/" + cityName;
+    console.log("WEATHER LINK: ", weather);
+  $.getJSON(weather, function(data){
       console.log('json', data);
       icon = new Image();
       icon.src = "https:" + data.current.condition.icon;
@@ -61,11 +62,11 @@ $(document).ready(function() {
           $("body").addClass("rain");
           break;
         case "Overcast":
+        case "Partly cloudy":
           $("body").removeClass();
           $("body").addClass("scattered");
           break;
         case "Patchy rain possible":
-        case "Partly cloudy":
         case "Patchy freezing drizzle possible":
         case "Patchy light rain":
         case "Light rain":
