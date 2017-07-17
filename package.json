@@ -23,7 +23,6 @@
     "body-parser": "^1.17.2",
     "dotenv": "^4.0.0",
     "express": "^4.15.3",
-    "jquery": "^3.2.1",
     "serve-favicon": "^2.4.3"
   }
 }
